@@ -79,17 +79,14 @@
         <hr class="container mx-auto mb-7 mt-2 border-[#CDCDCD]">
 
         <!-- dynamic categoryList -->
-        <nav class="container mx-auto lg:px-3 px-2">
-            <div class="flex items-center">
-                <ul class="flex flex-row flex-wrap mt-0 lg:mr-6 lg:space-x-20 space-x-3">
-                    <li>
-                        <a href="#"
-                            class="ml-0 hover:text-blue-500 font-roboto font-normal lg:text-lg text-base text-[#858585]"
-                            aria-current="page">Home</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div id="fail-div" class="d-none">
+
+        </div>
+        <div id="category-ul-container" class="flex items-center justify-center">
+            <ul id="category-list" class="flex flex-row justify-center flex-wrap mt-0 lg:space-x-20">
+
+            </ul>
+        </div>
         <!-- item counter section -->
         <section class="pt-5 lg:container lg:mx-auto pb-[70px] lg:pl-4 pl-[60px] lg:w-auto w-5/6">
             <div class="bg-white rounded-lg ">
@@ -102,35 +99,25 @@
     <main class="bg-[#F6F6F7]">
         <!-- card body -->
         <section class="card-body ">
-            <div class="card lg:container lg:mx-auto pb-4">
+            <div class="card container mx-auto pb-4">
                 <a href="#"
                     class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row dark:border-gray-700">
-                    <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-2/12 md:rounded-none md:rounded-l-lg lg:p-2"
-                        src="https://images.unsplash.com/photo-1662065048005-f0e1213453ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    <img class="object-cover w-full h-70 rounded-t-lg md:h-80 md:w-2/12 md:rounded-none md:rounded-l-lg lg:p-2"
+                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
                         alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal">
                         <h5 class="mb-2 text-2xl font-bold tracking-normal text-gray-900 md:mt-0 lg:pt-0">Noteworthy
                             technology acquisitions 2021</h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet,
-                            consectetur adipisicing elit. Corrupti pariatur facere dolores iusto est itaque in. Voluptas
-                            nobis hic, porro maxime quo dignissimos accusamus. Expedita in, quidem voluptate molestiae
-                            fugiat id commodi! Architecto quod quasi non eaque modi id esse, libero ipsam tempora iste
-                            optio. Libero ab sunt perspiciatis. Dignissimos ad rerum impedit illum beatae nulla qui
-                            culpa nesciunt possimus, magni reprehenderit dicta dolorem praesentium pariatur recusandae
-                            dolorum odit ipsam? Aspernatur facilis distinctio sit quam voluptates vel, iure explicabo et
-                            minima tempora, excepturi, nesciunt enim atque aliquid assumenda ad quis! Harum, in
-                            excepturi suscipit quibusdam impedit fugiat similique natus beatae, atque, repudiandae
-                            error. Necessitatibus alias unde est ad quisquam, dicta assumenda culpa vel adipisci
-                            possimus minima corporis, quos repellat et rem cupiditate? Repellat possimus dolorem
-                            perspiciatis voluptatum ea blanditiis nostrum vel suscipit vitae, deserunt fugit temporibus
-                            asperiores obcaecati eius alias, optio nobis debitis, earum odio porro? Nesciunt amet natus
-                            suscipit vitae perspiciatis tempora eligendi quas facilis officia vel voluptas similique
-                            adipisci, nisi placeat tempore eos perferendis aspernatur laboriosam nostrum dolor minima
-                            magnam possimus quis fugit? Voluptatum possimus maxime accusantium ducimus ipsum inventore
-                            debitis omnis eum, assumenda doloribus sit, nesciunt adipisci, a et quod non? Similique,
-                            harum? Obcaecati asperiores quibusdam molestias?
-
-                        </p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Suscipit, earum. Animi soluta ipsa eius veniam aut expedita
+                            amet accusamus aliquid nulla saepe nobis rem voluptas totam quos ex, quidem laboriosam
+                            consectetur aliquam officiis autem perspiciatis eligendi? Esse laboriosam eum nesciunt,
+                            reiciendis eaque minus placeat sequi cum repellat amet. Ad earum tempore, incidunt tempora
+                            et illum ipsam iste sint maxime? Voluptas natus possimus voluptates corrupti minus deleniti
+                            quisquam veritatis temporibus, vel doloremque aspernatur itaque reprehenderit consequatur
+                            perspiciatis? Necessitatibus iure deleniti minima reiciendis aspernatur sint cupiditate
+                            ratione illo earum delectus pariatur amet dolor cumque, natus corrupti nesciunt dolorem
+                            placeat in esse? Placeat?</p>
                         <!-- writer -->
                         <div class="flex justify-between items-center">
                             <div class="flex">
@@ -144,27 +131,20 @@
                                 <p class="lg:pt-2.5 pl-2 pt-1.5 font-roboto font-bold text-base">1.5M</p>
                             </div>
                             <div class="flex">
-                                <i class="lg:pt-1.5 pt-1 fa-regular fa-star-half-stroke"></i>
-                                <i class="pl-2 lg:pt-1.5 pt-1 fa-regular fa-star"></i>
-                                <i class="pl-2 lg:pt-1.5 pt-1 fa-regular fa-star"></i>
-                                <i class="pl-2 lg:pt-1.5 pt-1 fa-regular fa-star"></i>
-                            </div>
-                            <div class="flex">
                                 <i class="fa-solid fa-arrow-right lg:pt-3.5 pt-2 text-[#515151]"></i>
                             </div>
                         </div>
-
                     </div>
                 </a>
 
             </div>
         </section>
     </main>
-
-    <!-- flowbite components -->
-    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <!-- js components -->
     <script src="js/app.js"></script>
+    <!-- flowbite components -->
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
 </body>
 
 </html>
