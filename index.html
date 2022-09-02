@@ -6,12 +6,156 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Forecast</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/d5f0eb291c.js" crossorigin="anonymous"></script>
     <!-- tailwind script -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: "'Playfair Display', serif",
+                        roboto: "'Roboto', sans-serif",
+                    },
+                    colors: {
+                        clifford: "#da373d",
+                        navblue: "#5D5FEF",
+                    },
+                },
+            },
+        };
+    </script>
+    <!-- flowbite components -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 </head>
 
 <body>
+    <!-- header start -->
+    <header class="bg-[#F6F6F7]">
+        <!-- nav start -->
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded mx-auto container bg-transparent">
+            <div class="flex flex-wrap justify-between items-center">
+                <a href="https://flowbite.com/" class="flex items-center">
+                    <span
+                        class="self-center text-xl font-semibold whitespace-nowrap font-playfair font-bold text-xl"><span
+                            class="rounded-lg p-2 bg-navblue text-white ">News</span>
+                        <span class="text-navblue">Forecast</span></span>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button"
+                    class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul
+                        class="flex flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-10 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+                        <li>
+                            <a href="#"
+                                class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 font-roboto font-bold text-base text-navblue"
+                                aria-current="page">News</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 pr-4 pl-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  font-roboto text-base font-normal text-[#A3A3A3]">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- horizontal Line -->
+        <hr class="container mx-auto mb-7 mt-2 border-[#CDCDCD]">
 
+        <!-- dynamic categoryList -->
+        <nav class="container mx-auto lg:px-3 px-2">
+            <div class="flex items-center">
+                <ul class="flex flex-row flex-wrap mt-0 lg:mr-6 lg:space-x-20 space-x-3">
+                    <li>
+                        <a href="#"
+                            class="ml-0 hover:text-blue-500 font-roboto font-normal lg:text-lg text-base text-[#858585]"
+                            aria-current="page">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- item counter section -->
+        <section class="pt-5 lg:container lg:mx-auto pb-[133px] lg:pl-4 pl-[60px] lg:w-auto w-5/6">
+            <div class="bg-white rounded-lg ">
+                <p class="lg:py-4 lg:pl-7 py-3 pl-5 font-roboto font-normal text-base">4 items found for category
+                    Entertainment</p>
+            </div>
+        </section>
+    </header>
+
+    <main class="bg-[#F6F6F7]">
+        <!-- card body -->
+        <section class="card-body ">
+            <div class="card lg:container lg:mx-auto">
+                <a href="#"
+                    class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row dark:border-gray-700">
+                    <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-2/12 md:rounded-none md:rounded-l-lg lg:p-2"
+                        src="https://images.unsplash.com/photo-1662065048005-f0e1213453ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                        alt="">
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-normal text-gray-900 md:mt-0 lg:pt-0">Noteworthy
+                            technology acquisitions 2021</h5>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Corrupti pariatur facere dolores iusto est itaque in. Voluptas
+                            nobis hic, porro maxime quo dignissimos accusamus. Expedita in, quidem voluptate molestiae
+                            fugiat id commodi! Architecto quod quasi non eaque modi id esse, libero ipsam tempora iste
+                            optio. Libero ab sunt perspiciatis. Dignissimos ad rerum impedit illum beatae nulla qui
+                            culpa nesciunt possimus, magni reprehenderit dicta dolorem praesentium pariatur recusandae
+                            dolorum odit ipsam? Aspernatur facilis distinctio sit quam voluptates vel, iure explicabo et
+                            minima tempora, excepturi, nesciunt enim atque aliquid assumenda ad quis! Harum, in
+                            excepturi suscipit quibusdam impedit fugiat similique natus beatae, atque, repudiandae
+                            error. Necessitatibus alias unde est ad quisquam, dicta assumenda culpa vel adipisci
+                            possimus minima corporis, quos repellat et rem cupiditate? Repellat possimus dolorem
+                            perspiciatis voluptatum ea blanditiis nostrum vel suscipit vitae, deserunt fugit temporibus
+                            asperiores obcaecati eius alias, optio nobis debitis, earum odio porro? Nesciunt amet natus
+                            suscipit vitae perspiciatis tempora eligendi quas facilis officia vel voluptas similique
+                            adipisci, nisi placeat tempore eos perferendis aspernatur laboriosam nostrum dolor minima
+                            magnam possimus quis fugit? Voluptatum possimus maxime accusantium ducimus ipsum inventore
+                            debitis omnis eum, assumenda doloribus sit, nesciunt adipisci, a et quod non? Similique,
+                            harum? Obcaecati asperiores quibusdam molestias?
+
+                        </p>
+                        <!-- writer -->
+                        <div class="flex justify-around">
+                            <div class="flex">
+                                <img src="https://images.unsplash.com/photo-1662104320233-ab2f03686036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    class="rounded-full w-10 h-10" alt="">
+                                <p class="pl-2 pt-2 font-roboto font-normal text-base">Jane Copper</p>
+                            </div>
+                            <!-- view -->
+                            <div class="flex">
+                                <i class="fa-solid fa-eye pt-3"></i>
+                                <p class="pt-1.5 pl-2.5">1.5M</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- flowbite components -->
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <!-- js components -->
+    <script src="js/app.js"></script>
 </body>
 
 </html>
