@@ -65,17 +65,10 @@ const displayNews = (news, category_name) => {
     //count number of news
     const newsCount = news.length;
     const newsCountContainer = document.getElementById('news-count');
-    if(newsCount > 0){
-        newsCountContainer.innerHTML = `
-        <p class="lg:py-4 lg:pl-7 py-3 pl-5 font-roboto font-normal text-base text-gray-800">${newsCount} items found for category
-        ${category_name}</p>
+    newsCountContainer.innerHTML = `
+    <p class="lg:py-4 lg:pl-7 py-3 pl-5 font-roboto font-normal text-base text-gray-800">${newsCount} items found for category
+    ${category_name}</p>
     `;
-    }
-    else{
-        newsCountContainer.innerHTML = `
-        <p class="lg:py-4 lg:pl-7 py-3 pl-5 font-roboto font-normal text-base text-gray-500">No News Found</p>
-    `;
-    }
     //show all news
     const newsContainer = document.getElementById('news-container');
     //check news exist or not
