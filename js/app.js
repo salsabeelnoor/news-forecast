@@ -49,7 +49,8 @@ const loadNews = async (category_id, category_name) => {
         displayNews(data.data, category_name);
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
+        alert("Data couldn't be fetched");
     }
     
 }
