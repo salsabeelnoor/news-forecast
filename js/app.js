@@ -126,5 +126,8 @@ const displayNews = (news, category_name) => {
         newsContainer.appendChild(newsCard);
     })
 }
+const toggleSpinner = isLoading => {
+    
+}
 loadNewsCategory();
 loadNews();
