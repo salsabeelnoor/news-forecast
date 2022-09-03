@@ -79,7 +79,7 @@
         <hr class="container mx-auto mb-7 mt-2 border-[#CDCDCD]">
 
         <!-- dynamic categoryList -->
-        <div id="fail-div" class="d-none">
+        <div id="fail-div" class="hidden">
 
         </div>
         <div id="category-ul-container" class="flex items-center justify-center">
@@ -89,55 +89,20 @@
         </div>
         <!-- item counter section -->
         <section class="pt-5 lg:container lg:mx-auto pb-[70px] lg:pl-4 pl-[60px] lg:w-auto w-5/6">
-            <div class="bg-white rounded-lg ">
-                <p class="lg:py-4 lg:pl-7 py-3 pl-5 font-roboto font-normal text-base">4 items found for category
-                    Entertainment</p>
+            <div class="bg-white rounded-lg" id="news-count">
+
             </div>
         </section>
     </header>
 
     <main class="bg-[#F6F6F7]">
+        <div id="no-news-found" class="hidden">
+            <h3 class="text-center text-gray-700 font-roboto font-normal lg:text-lg text-base text-[#858585]">No News
+                Found</h3>
+        </div>
         <!-- card body -->
-        <section class="card-body ">
-            <div class="card container mx-auto pb-4">
-                <a href="#"
-                    class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row dark:border-gray-700">
-                    <img class="object-cover w-full h-70 rounded-t-lg md:h-80 md:w-2/12 md:rounded-none md:rounded-l-lg lg:p-2"
-                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
-                        alt="">
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-normal text-gray-900 md:mt-0 lg:pt-0">Noteworthy
-                            technology acquisitions 2021</h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Suscipit, earum. Animi soluta ipsa eius veniam aut expedita
-                            amet accusamus aliquid nulla saepe nobis rem voluptas totam quos ex, quidem laboriosam
-                            consectetur aliquam officiis autem perspiciatis eligendi? Esse laboriosam eum nesciunt,
-                            reiciendis eaque minus placeat sequi cum repellat amet. Ad earum tempore, incidunt tempora
-                            et illum ipsam iste sint maxime? Voluptas natus possimus voluptates corrupti minus deleniti
-                            quisquam veritatis temporibus, vel doloremque aspernatur itaque reprehenderit consequatur
-                            perspiciatis? Necessitatibus iure deleniti minima reiciendis aspernatur sint cupiditate
-                            ratione illo earum delectus pariatur amet dolor cumque, natus corrupti nesciunt dolorem
-                            placeat in esse? Placeat?</p>
-                        <!-- writer -->
-                        <div class="flex justify-between items-center">
-                            <div class="flex">
-                                <img src="https://images.unsplash.com/photo-1662104320233-ab2f03686036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                    class="rounded-full w-10 h-10" alt="">
-                                <p class="pl-2 pt-2 font-roboto font-normal text-base">Jane Copper</p>
-                            </div>
-                            <!-- view -->
-                            <div class="flex">
-                                <i class="fa-solid fa-eye lg:pt-3.5 text-[#515151] pt-2.5"></i>
-                                <p class="lg:pt-2.5 pl-2 pt-1.5 font-roboto font-bold text-base">1.5M</p>
-                            </div>
-                            <div class="flex">
-                                <i class="fa-solid fa-arrow-right lg:pt-3.5 pt-2 text-[#515151]"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+        <section id="news-container" class="card-body ">
 
-            </div>
         </section>
     </main>
     <!-- js components -->
