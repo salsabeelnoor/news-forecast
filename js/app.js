@@ -86,6 +86,9 @@ const displayNews = (news, category_name) => {
     else{
         showFailMsg.classList.add('hidden');
     }
+    news.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
     news.forEach(news => {
         //name check
         let authorName;
@@ -117,7 +120,7 @@ const displayNews = (news, category_name) => {
         newsCard.innerHTML = `
             <div class="card container mx-auto pb-4">
             <a href="#"
-                class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row dark:border-gray-700">
+                class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row">
                 <img class="object-cover w-full h-70 rounded-t-lg md:h-80 md:w-2/12 md:rounded-none md:rounded-l-lg lg:p-2"
                     src="${news.image_url}" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal w-full">
@@ -132,12 +135,12 @@ const displayNews = (news, category_name) => {
                                 <p class="pl-2 pt-2 font-roboto font-normal text-base text-gray-500">${authorName}</p>
                             </div>
                             <!-- view -->
-                            <div class="flex">
+                            <div class="flex pr-2">
                                 <i class="fa-solid fa-eye lg:pt-3.5 text-[#515151] pt-2.5"></i>
                                 <p class="lg:pt-2.5 pl-2 pt-1.5 font-roboto font-bold text-base">${view}</p>
                             </div>
                             <div class="flex">
-                                <i class="fa-solid fa-arrow-right lg:pt-3.5 pt-2 text-[#515151]"></i>
+                            <label for="my-modal-3" onclick="loadFullNews('${news._id}')" class="btn btn-outline modal-button flex items-center">See More <i class="fa-solid md:pl-2 fa-arrow-right invisible md:visible"></i></label>
                             </div>
                         </div>
                     </div>
@@ -151,6 +154,26 @@ const displayNews = (news, category_name) => {
     //stop spinner
     toggleSpinner(false);
 }
+const loadFullNews = async id => {
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/${id}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        displayFullNews(data.data);
+    }
+    catch {
+        alert("Data couldn't be fetched");
+    }
+}
+
+const displayFullNews = newsData => {
+    console.log(newsData)
+    document.getElementById('newsTitle').innerText = newsData[0].title ? newsData[0].title : 'Not Available';
+    document.getElementById('fullNews').innerText = newsData[0].details ? newsData[0].details : 'Not Available';
+    document.getElementById('newsAuthor').innerText = newsData[0].author.name ? newsData[0].author.name : 'Not Available';
+    document.getElementById('newsDate').innerText = newsData[0].author.published_date ? newsData[0].author.published_date : 'Not Available';
+}
+
 const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader');
     const showFailMsg = document.getElementById('no-news-found');
