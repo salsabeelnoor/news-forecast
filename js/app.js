@@ -1,5 +1,6 @@
 //Load news categories
 const loadNewsCategory = async() => {
+    toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     try{
         const rest = await fetch(url);
@@ -26,6 +27,7 @@ const displayCategory = newsCat => {
         `;
         newsCategory.appendChild(categoryList);
     })
+    toggleSpinner(false);
 }
 const displayCategoryFailed = () => {
     const newsCategory = document.getElementById('fail-div');
@@ -36,13 +38,15 @@ const displayCategoryFailed = () => {
 }
 //Load news
 const loadNews = async (category_id, category_name) => {
+    toggleSpinner(true);
+    const newsContainer = document.getElementById('news-container');
+    newsContainer.innerHTML = '';
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     try{
         const rest = await fetch(url);
         const data = await rest.json();
         // console.log(data.data);
         displayNews(data.data, category_name);
-        
     }
     catch(error){
         console.log(error);
@@ -52,6 +56,7 @@ const loadNews = async (category_id, category_name) => {
 const getNews = categories => {
     categories.forEach(category => {
         document.getElementById(`${category.category_id}`).addEventListener('click', function(){
+            
             loadNews(category.category_id, category.category_name);
         })
     })
@@ -73,7 +78,6 @@ const displayNews = (news, category_name) => {
     }
     //show all news
     const newsContainer = document.getElementById('news-container');
-    newsContainer.textContent = '';
     //check news exist or not
     const showFailMsg = document.getElementById('no-news-found');
     if(news.length == 0){
@@ -83,6 +87,22 @@ const displayNews = (news, category_name) => {
         showFailMsg.classList.add('hidden');
     }
     news.forEach(news => {
+        //name check
+        let authorName;
+        if(news.author.name == '' || news.author.name == null){
+            authorName = 'Not availabe';
+        }
+        else{
+            authorName = news.author.name;
+        }
+        //check view
+        let view;
+        if(news.total_view == '' || news.total_view == null){
+            view = 0;
+        }
+        else{
+            view = news.total_view;
+        }
         //slice text
         let newsDetail = '';
         if(news.details.length > 900){
@@ -100,22 +120,25 @@ const displayNews = (news, category_name) => {
                 class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row dark:border-gray-700">
                 <img class="object-cover w-full h-70 rounded-t-lg md:h-80 md:w-2/12 md:rounded-none md:rounded-l-lg lg:p-2"
                     src="${news.image_url}" alt="">
-                <div class="flex flex-col justify-between p-4 leading-normal">
+                <div class="flex flex-col justify-between p-4 leading-normal w-full">
                     <h5 class="mb-2 text-2xl font-bold tracking-normal text-gray-900 md:mt-0 lg:pt-0">${news.title}</h5>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">${newsDetail}</p>
+                
                     <!-- writer -->
-                    <div class="flex justify-between items-center">
-                        <div class="flex">
-                            <img src="${news.author.img}" class="rounded-full w-10 h-10" alt="">
-                            <p class="pl-2 pt-2 font-roboto font-normal text-base">${news.author.name}</p>
-                        </div>
-                        <!-- view -->
-                        <div class="flex">
-                            <i class="fa-solid fa-eye lg:pt-3.5 text-[#515151] pt-2.5"></i>
-                            <p class="lg:pt-2.5 pl-2 pt-1.5 font-roboto font-bold text-base">${news.total_view}</p>
-                        </div>
-                        <div class="flex">
-                            <i class="fa-solid fa-arrow-right lg:pt-3.5 pt-2 text-[#515151]"></i>
+                    <div class=""> 
+                        <div class="flex flex-row justify-between">
+                            <div class="flex">
+                                <img src="${news.author.img}" class="rounded-full w-10 h-10" alt="">
+                                <p class="pl-2 pt-2 font-roboto font-normal text-base text-gray-500">${authorName}</p>
+                            </div>
+                            <!-- view -->
+                            <div class="flex">
+                                <i class="fa-solid fa-eye lg:pt-3.5 text-[#515151] pt-2.5"></i>
+                                <p class="lg:pt-2.5 pl-2 pt-1.5 font-roboto font-bold text-base">${view}</p>
+                            </div>
+                            <div class="flex">
+                                <i class="fa-solid fa-arrow-right lg:pt-3.5 pt-2 text-[#515151]"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,9 +148,19 @@ const displayNews = (news, category_name) => {
         `;
         newsContainer.appendChild(newsCard);
     })
+    //stop spinner
+    toggleSpinner(false);
 }
 const toggleSpinner = isLoading => {
-    
+    const loaderSection = document.getElementById('loader');
+    const showFailMsg = document.getElementById('no-news-found');
+    if(isLoading){
+        showFailMsg.classList.add('hidden');
+        loaderSection.classList.remove('hidden');
+    }
+    else {
+        loaderSection.classList.add('hidden');
+    }
 }
 loadNewsCategory();
-loadNews();
+loadNews('08', 'All News');
