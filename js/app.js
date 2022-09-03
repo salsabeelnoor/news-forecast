@@ -8,6 +8,7 @@ const loadNewsCategory = async() => {
         // console.log(data.data.news_category);
         displayCategory(data.data.news_category);
         getNews(data.data.news_category);
+        loadNews('08', 'All News');
     }
     catch(error){
         // console.log(error);
@@ -35,6 +36,7 @@ const displayCategoryFailed = () => {
     newsCategory.innerHTML = `
         <h3 class="text-center text-gray-700 font-roboto font-normal lg:text-lg text-base text-[#858585]">404 NOT FOUND</h3>
     `;
+    toggleSpinner(false);
 }
 //Load news
 const loadNews = async (category_id, category_name) => {
@@ -180,4 +182,4 @@ const toggleSpinner = isLoading => {
     }
 }
 loadNewsCategory();
-loadNews('08', 'All News');
+
