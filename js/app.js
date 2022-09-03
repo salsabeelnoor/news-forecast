@@ -121,18 +121,18 @@ const displayNews = (news, category_name) => {
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">${newsDetail}</p>
                 
                     <!-- writer -->
-                    <div class=""> 
-                        <div class="flex flex-row justify-between">
+                    <div class="pt-3"> 
+                        <div class="flex lg:flex-row justify-between">
                             <div class="flex">
                                 <img src="${news.author.img}" class="rounded-full w-10 h-10" alt="">
-                                <p class="pl-2 pt-2 font-roboto font-normal text-base text-gray-500">${authorName}</p>
+                                <p class="pl-2 pt-1.5 font-roboto font-normal text-base text-gray-500">${authorName}</p>
                             </div>
                             <!-- view -->
                             <div class="flex pr-2">
                                 <i class="fa-solid fa-eye lg:pt-3.5 text-[#515151] pt-2.5"></i>
                                 <p class="lg:pt-2.5 pl-2 pt-1.5 font-roboto font-bold text-base">${view}</p>
                             </div>
-                            <div class="flex">
+                            <div class="flex ">
                             <label for="my-modal-3" onclick="loadFullNews('${news._id}')" class="btn btn-outline modal-button flex items-center">See More <i class="fa-solid md:pl-2 fa-arrow-right invisible md:visible"></i></label>
                             </div>
                         </div>
