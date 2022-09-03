@@ -82,7 +82,8 @@
                     class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 hover:bg-blue-100 bg-blue-100 text-blue-600"
                     data-accordion-target="#accordion-color-body-1" aria-expanded="true"
                     aria-controls="accordion-color-body-1">
-                    <span>What is Flowbite?</span>
+                    <span class="text-gray-700">What is the difference between Var, Let and Const in
+                        JavaScript?</span>
                     <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor"
                         viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -93,13 +94,59 @@
             </h2>
             <div id="accordion-color-body-1" class="" aria-labelledby="accordion-color-heading-1">
                 <div class="p-5 font-light border border-b-0 border-gray-200">
-                    <p class="mb-2 text-gray-500">Flowbite is an open-source library of interactive
-                        components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.
-                    </p>
-                    <p class="text-gray-500">Check out this guide to learn how to <a
-                            href="/docs/getting-started/introduction/"
-                            class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start
-                        developing websites even faster with components on top of Tailwind CSS.</p>
+                    <div class="overflow-x-auto relative">
+                        <table class="w-full mx-auto text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+                                <tr>
+                                    <th scope="col" class="py-3 px-6 font-bold">
+                                        var
+                                    </th>
+                                    <th scope="col" class="py-3 px-6">
+                                        let
+                                    </th>
+                                    <th scope="col" class="py-3 px-6">
+                                        const
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
+                                        The scope of a var variable is functional scope.
+                                    </td>
+                                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                        The scope of a let variable is block scope.
+                                    </td>
+                                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                        The scope of a const variable is block scope.
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                        It can be updated and re-declared into the scope.
+                                    </th>
+                                    <td class="py-4 px-6  font-medium text-gray-900 whitespace-nowrap">
+                                        It can be updated but cannot be re-declared into the scope.
+                                    </td>
+                                    <td class="py-4 px-6  font-medium text-gray-900 whitespace-nowrap">
+                                        It cannot be updated or re-declared into the scope.
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                        It can be declared without initialization.
+                                    </th>
+                                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                        It can be declared without initialization.
+                                    </td>
+                                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                        It cannot be declared without initialization.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
             <h2 id="accordion-color-heading-2">
@@ -107,7 +154,8 @@
                     class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-blue-100"
                     data-accordion-target="#accordion-color-body-2" aria-expanded="false"
                     aria-controls="accordion-color-body-2">
-                    <span>Is there a Figma file available?</span>
+                    <span class="text-gray-700">What is the difference between arrow function and regular
+                        function?</span>
                     <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -118,12 +166,18 @@
             </h2>
             <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
                 <div class="p-5 font-light border border-b-0 border-gray-200">
-                    <p class="mb-2 text-gray-500">Flowbite is first conceptualized and designed using
-                        the Figma software so everything you see in the library has a design equivalent in our Figma
-                        file.</p>
-                    <p class="text-gray-500">Check out the <a href="https://flowbite.com/figma/"
-                            class="text-blue-600 hover:underline">Figma design system</a> based on
-                        the utility classes from Tailwind CSS and components from Flowbite.</p>
+                    <p class="mb-2 font-roboto text-base"><span class="font-bold">Regular
+                            functions</span>&nbsp
+                        created using
+                        function
+                        declarations or expressions are
+                        constructible and callable. Since regular functions are constructible, they can be called
+                        using the new keyword. Arguments objects are available in regular functions.</p>
+                    <br>
+                    <p class="mb-2 font-roboto text-base">The <span class="font-bold">Arrow functions</span>&nbsp
+                        are only callable and not constructible, i.e arrow functions can never be used as constructor
+                        functions. Arrow functions do not have their own this. Arguments objects are not available in
+                        arrow functions</p>
                 </div>
             </div>
             <h2 id="accordion-color-heading-3">
@@ -131,7 +185,7 @@
                     class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-blue-200 hover:bg-blue-100"
                     data-accordion-target="#accordion-color-body-3" aria-expanded="false"
                     aria-controls="accordion-color-body-3">
-                    <span>What are the differences between Flowbite and Tailwind UI?</span>
+                    <span>What is Difference between map, forEach, Filter, Find?</span>
                     <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -142,14 +196,12 @@
             </h2>
             <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
                 <div class="p-5 font-light border border-t-0 border-gray-200">
-                    <p class="mb-2 text-gray-500 ">The main difference is that the core components
-                        from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.
-                        Another difference is that Flowbite relies on smaller and standalone components, whereas
-                        Tailwind UI offers sections of pages.</p>
-                    <p class="mb-2 text-gray-500">However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the
-                        best of two worlds.</p>
-                    <p class="mb-2 text-gray-500">Learn more about these technologies:</p>
+                    <p class="mb-2 font-roboto text-base">The<span class="font-bold">map() method</span>&nbsp
+                        method creates an entirely new array. Method returns the newly created array according to the
+                        provided callback function and does not change the original array.</p>
+                    <p class="mb-2 font-roboto text-base">The<span class="font-bold">forEach() method</span>&nbsp
+                        method does not create a new array based on the given array. Method returns “undefined“. It is
+                        not executed for empty elements.</p>
                     <ul class="pl-5 text-gray-500 list-disc">
                         <li><a href="https://flowbite.com/pro/" class="text-blue-600 hover:underline">Flowbite Pro</a>
                         </li>
